@@ -1,0 +1,29 @@
+{
+  "book": {
+    "key": "SBC201:2024",
+    "code": "SBC 201",
+    "edition": "2024",
+    "kind": "sbc",
+    "title_en": "Saudi General Building Code",
+    "title_ar": "كود البناء السعودي العام",
+    "status": "live",
+    "pages": 0,
+    "store_version": "v1",
+    "loaded_at": null,
+    "updated_at": null,
+    "changes": null,
+    "clauses": null,
+    "enabled": true,
+    "size_bytes": null
+  },
+  "counts": {
+    "chapters": 0,
+    "clauses": 0,
+    "checkable": 0,
+    "tables": 0,
+    "figures": 0,
+    "definitions": 0
+  },
+  "key_requirements": [],
+  "related": []
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "key": "SBC201:2024:1011.2",
+    "number": "1011.2",
+    "parent_number": null,
+    "kind": "clause",
+    "title_en": null,
+    "text_en": "the minimum width shall be not less than 1100 mm",
+    "title_ar": null,
+    "text_ar": null,
+    "page_start": 0,
+    "page_end": 0,
+    "book_key": "SBC201:2024",
+    "score": 1,
+    "how": "number"
+  }
+]

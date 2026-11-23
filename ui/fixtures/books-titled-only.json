@@ -1,0 +1,36 @@
+[
+  {
+    "key": "SBC201:2024",
+    "code": "SBC 201",
+    "edition": "2024",
+    "kind": "sbc",
+    "title_en": "Saudi General Building Code",
+    "title_ar": "كود البناء السعودي العام",
+    "status": "live",
+    "pages": 0,
+    "store_version": "v1",
+    "loaded_at": null,
+    "updated_at": null,
+    "changes": null,
+    "clauses": null,
+    "enabled": true,
+    "size_bytes": null
+  },
+  {
+    "key": "SBC801:2024",
+    "code": "SBC 801",
+    "edition": "2024",
+    "kind": "sbc",
+    "title_en": "Saudi Fire Code",
+    "title_ar": "كود الحماية من الحرائق السعودي",
+    "status": "live",
+    "pages": 0,
+    "store_version": "v1",
+    "loaded_at": null,
+    "updated_at": null,
+    "changes": null,
+    "clauses": null,
+    "enabled": true,
+    "size_bytes": null
+  }
+]

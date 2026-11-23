@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "answer": "The minimum width shall be not less than 1100 mm.",
+  "citations": [
+    {
+      "ref": "1011.2",
+      "quote": "the minimum width shall be not less than 1100 mm"
+    }
+  ],
+  "result": null,
+  "note": null,
+  "refused": null
+}

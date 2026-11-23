@@ -11,7 +11,8 @@ what is unconfirmed, what is a placeholder and what was not built.
 | UI walkthrough, 14 s, 1080x1080 | `ui/walk.js` + `ui/shots/` | `exports/emtithal-ui-walk.mp4` |
 | Design-system reveal, 10 s, 1080x1350 | `ui/system.js` + `ui/shots/` | `exports/emtithal-ui-system.mp4` |
 
-The subtitle timings are `emtithal-ask-the-code-subtitles-ar.srt`.
+The brief is `docs/emtithal-ask-the-code-film-brief.md` (public copy, internal notes removed); the subtitle timings are
+`emtithal-ask-the-code-subtitles-ar.srt`. `CLAUDE.md` holds the working rules for anyone continuing with Claude.
 
 ## Requirements
 
@@ -39,5 +40,13 @@ node tools/brand.cjs                      # re-embed src/brand/*.svg into src/br
 - `src/audio.js`: score, effects and voice mix. `vo/vo-master.wav`: scratch voice (not in the current mix).
 - `src/brand/`: the team's logo SVGs.
 - `ui/shots/`: screenshots of the frontend and `manifest.json` with the regions the cursor and camera use.
+- `ui/capture.cjs`, `ui/build-fixtures.cjs`, `ui/fixtures/`: how the screenshots were taken. Re-capturing needs the
+  private product repo running locally (`next dev` on port 3100 with `ALLOW_ALL_PAGES=true`); `build-fixtures.cjs`
+  reads its data from that repo.
 
-The two film masters (about 250 MB each) and the audio stems are not in git; re-render them or share them separately.
+## Exports
+
+- `exports/emtithal-ask-the-code-1080.mp4` and `-1080-clean.mp4` (no burned-in subtitles): full 1080x1920, crf 27.
+- `exports/emtithal-ask-the-code-phone.mp4`: 720x1280.
+- `exports/audio/sfx-mix.wav`: the effects-only mix of the 40 s film.
+- The crf 16 masters (about 250 MB each) are over GitHub's file limit; re-render them with `node tools/render.cjs`.

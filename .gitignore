@@ -5,4 +5,5 @@ build/
 # masters are over GitHub's 100 MB file limit; share them through Drive
 exports/emtithal-ask-the-code.mp4
 exports/emtithal-ask-the-code-clean.mp4
-exports/audio/
+exports/audio/*
+!exports/audio/sfx-mix.wav

@@ -1,0 +1,283 @@
+{
+  "Chapter 10": {
+    "key": "SBC201:2024:Chapter 10",
+    "number": "Chapter 10",
+    "parent_number": null,
+    "kind": "chapter",
+    "title_en": null,
+    "text_en": "",
+    "title_ar": null,
+    "text_ar": null,
+    "page_start": 0,
+    "page_end": 0,
+    "bbox": null,
+    "page_size": null,
+    "sort_kind": null,
+    "answerable": null,
+    "exceptions": [],
+    "trail": [],
+    "links": [],
+    "linked_clauses": [],
+    "tables": [],
+    "figures": [],
+    "definitions": []
+  },
+  "1010.1.1": {
+    "key": "SBC201:2024:1010.1.1",
+    "number": "1010.1.1",
+    "parent_number": null,
+    "kind": "clause",
+    "title_en": null,
+    "text_en": "shall provide a minimum clear opening width of 800 mm",
+    "title_ar": null,
+    "text_ar": null,
+    "page_start": 0,
+    "page_end": 0,
+    "bbox": null,
+    "page_size": null,
+    "sort_kind": null,
+    "answerable": null,
+    "exceptions": [],
+    "trail": [
+      {
+        "number": "Chapter 10",
+        "title_en": null,
+        "title_ar": null
+      }
+    ],
+    "links": [],
+    "linked_clauses": [],
+    "tables": [],
+    "figures": [],
+    "definitions": []
+  },
+  "1010.3.1": {
+    "key": "SBC201:2024:1010.3.1",
+    "number": "1010.3.1",
+    "parent_number": null,
+    "kind": "clause",
+    "title_en": null,
+    "text_en": "Each revolving door shall be capable of breakout in accordance with BHMA A156.27 and shall provide an aggregate width of not less than 900 mm.",
+    "title_ar": null,
+    "text_ar": null,
+    "page_start": 0,
+    "page_end": 0,
+    "bbox": null,
+    "page_size": null,
+    "sort_kind": null,
+    "answerable": null,
+    "exceptions": [],
+    "trail": [
+      {
+        "number": "Chapter 10",
+        "title_en": null,
+        "title_ar": null
+      }
+    ],
+    "links": [],
+    "linked_clauses": [],
+    "tables": [],
+    "figures": [],
+    "definitions": []
+  },
+  "1011.2": {
+    "key": "SBC201:2024:1011.2",
+    "number": "1011.2",
+    "parent_number": null,
+    "kind": "clause",
+    "title_en": null,
+    "text_en": "the minimum width shall be not less than 1100 mm",
+    "title_ar": null,
+    "text_ar": null,
+    "page_start": 0,
+    "page_end": 0,
+    "bbox": null,
+    "page_size": null,
+    "sort_kind": null,
+    "answerable": null,
+    "exceptions": [
+      {
+        "key": "SBC201:2024:1011.2 Exception 1",
+        "number": "1011.2 Exception 1",
+        "parent_number": "1011.2",
+        "kind": "exception",
+        "title_en": null,
+        "text_en": "Stairways serving an occupant load of less than 50 shall have a width of not less than 900 mm",
+        "title_ar": null,
+        "text_ar": null,
+        "page_start": 0,
+        "page_end": 0
+      }
+    ],
+    "trail": [
+      {
+        "number": "Chapter 10",
+        "title_en": null,
+        "title_ar": null
+      }
+    ],
+    "links": [],
+    "linked_clauses": [],
+    "tables": [],
+    "figures": [],
+    "definitions": []
+  },
+  "1011.2 Exception 1": {
+    "key": "SBC201:2024:1011.2 Exception 1",
+    "number": "1011.2 Exception 1",
+    "parent_number": "1011.2",
+    "kind": "exception",
+    "title_en": null,
+    "text_en": "Stairways serving an occupant load of less than 50 shall have a width of not less than 900 mm",
+    "title_ar": null,
+    "text_ar": null,
+    "page_start": 0,
+    "page_end": 0,
+    "bbox": null,
+    "page_size": null,
+    "sort_kind": null,
+    "answerable": null,
+    "exceptions": [],
+    "trail": [
+      {
+        "number": "Chapter 10",
+        "title_en": null,
+        "title_ar": null
+      }
+    ],
+    "links": [],
+    "linked_clauses": [],
+    "tables": [],
+    "figures": [],
+    "definitions": []
+  },
+  "1011.5.2": {
+    "key": "SBC201:2024:1011.5.2",
+    "number": "1011.5.2",
+    "parent_number": null,
+    "kind": "clause",
+    "title_en": null,
+    "text_en": "Stair riser heights shall be 175 mm maximum and 100 mm minimum",
+    "title_ar": null,
+    "text_ar": null,
+    "page_start": 0,
+    "page_end": 0,
+    "bbox": null,
+    "page_size": null,
+    "sort_kind": null,
+    "answerable": null,
+    "exceptions": [],
+    "trail": [
+      {
+        "number": "Chapter 10",
+        "title_en": null,
+        "title_ar": null
+      }
+    ],
+    "links": [],
+    "linked_clauses": [],
+    "tables": [],
+    "figures": [],
+    "definitions": []
+  },
+  "1012.2": {
+    "key": "SBC201:2024:1012.2",
+    "number": "1012.2",
+    "parent_number": null,
+    "kind": "clause",
+    "title_en": null,
+    "text_en": "a running slope not steeper than 1 unit vertical in 12 units horizontal (8.3-percent slope)",
+    "title_ar": null,
+    "text_ar": null,
+    "page_start": 0,
+    "page_end": 0,
+    "bbox": null,
+    "page_size": null,
+    "sort_kind": null,
+    "answerable": null,
+    "exceptions": [],
+    "trail": [
+      {
+        "number": "Chapter 10",
+        "title_en": null,
+        "title_ar": null
+      }
+    ],
+    "links": [],
+    "linked_clauses": [],
+    "tables": [],
+    "figures": [],
+    "definitions": []
+  },
+  "1020.5": {
+    "key": "SBC201:2024:1020.5",
+    "number": "1020.5",
+    "parent_number": null,
+    "kind": "clause",
+    "title_en": null,
+    "text_en": "dead-end corridors do not exceed 6 m in length",
+    "title_ar": null,
+    "text_ar": null,
+    "page_start": 0,
+    "page_end": 0,
+    "bbox": null,
+    "page_size": null,
+    "sort_kind": null,
+    "answerable": null,
+    "exceptions": [
+      {
+        "key": "SBC201:2024:1020.5 Exception 2",
+        "number": "1020.5 Exception 2",
+        "parent_number": "1020.5",
+        "kind": "exception",
+        "title_en": null,
+        "text_en": "the length of the dead- end corridors shall not exceed 15 m",
+        "title_ar": null,
+        "text_ar": null,
+        "page_start": 0,
+        "page_end": 0
+      }
+    ],
+    "trail": [
+      {
+        "number": "Chapter 10",
+        "title_en": null,
+        "title_ar": null
+      }
+    ],
+    "links": [],
+    "linked_clauses": [],
+    "tables": [],
+    "figures": [],
+    "definitions": []
+  },
+  "1020.5 Exception 2": {
+    "key": "SBC201:2024:1020.5 Exception 2",
+    "number": "1020.5 Exception 2",
+    "parent_number": "1020.5",
+    "kind": "exception",
+    "title_en": null,
+    "text_en": "the length of the dead- end corridors shall not exceed 15 m",
+    "title_ar": null,
+    "text_ar": null,
+    "page_start": 0,
+    "page_end": 0,
+    "bbox": null,
+    "page_size": null,
+    "sort_kind": null,
+    "answerable": null,
+    "exceptions": [],
+    "trail": [
+      {
+        "number": "Chapter 10",
+        "title_en": null,
+        "title_ar": null
+      }
+    ],
+    "links": [],
+    "linked_clauses": [],
+    "tables": [],
+    "figures": [],
+    "definitions": []
+  }
+}
