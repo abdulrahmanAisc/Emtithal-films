@@ -7,6 +7,7 @@
     await FILM.BRAND.load();
     await Promise.all(['400', '500', '600', '700'].map((w) => document.fonts.load(`${w} 40px "Noto Kufi Arabic"`, 'امتثال')).concat([document.fonts.load('400 40px "Inter"', 'Ag0'), document.fonts.load('600 40px "Inter"', 'Ag0')]));
     for (const s of FILM.UI_MANIFEST) U.shots[s.id] = s;
+    if (FILM.UI_BG) await new Promise((res, rej) => { const im = new Image(); im.onload = () => { U.bg = im; res(); }; im.onerror = rej; im.src = FILM.UI_BG; });
     await Promise.all(Object.entries(FILM.UI_IMAGES).map(([id, src]) => new Promise((res, rej) => { const im = new Image(); im.onload = () => { U.imgs[id] = im; res(); }; im.onerror = rej; im.src = src; })));
   };
   // rect of a named target in a keyframe (CSS px of the 1440x900 viewport); falls back to the viewport centre

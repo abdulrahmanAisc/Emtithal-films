@@ -11,7 +11,7 @@ const js = ['src/config.js', 'src/brand.js', 'src/lib.js', 'src/objects.js'].map
 const out = path.join(root, `emtithal-ui-${name}.html`);
 fs.writeFileSync(out, `<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>امتثال</title><style>${css}
 html,body{margin:0;height:100%;background:#0C0F15;overflow:hidden}canvas{display:block;margin:0 auto;max-height:100vh;max-width:100vw}</style></head><body><canvas id="film" width="${size[0]}" height="${size[1]}"></canvas>${js}
-<script>FILM.UI_MANIFEST=${JSON.stringify(manifest)};FILM.UI_IMAGES=${JSON.stringify(imgs)};</script><script>\n${fs.readFileSync(path.join(root, 'ui/common.js'), 'utf8')}\n</script><script>\n${src}\n</script></body></html>`);
+<script>FILM.UI_BG='data:image/webp;base64,'+${JSON.stringify(b64(path.join(root, 'ui/assets/hero-halftone.webp')))};FILM.UI_MANIFEST=${JSON.stringify(manifest)};FILM.UI_IMAGES=${JSON.stringify(imgs)};</script><script>\n${fs.readFileSync(path.join(root, 'ui/common.js'), 'utf8')}\n</script><script>\n${src}\n</script></body></html>`);
 (async () => {
   const b = await chromium.launch(); const open = async () => { const p = await b.newPage(); p.on('pageerror', (e) => console.error('PAGE ERROR', e.message)); await p.goto('file://' + out); await p.evaluate(() => { window.__render = true; return FILM.V.ready; }); return p; };
   const p = await open(); const V = await p.evaluate(() => ({ DUR: FILM.V.DUR, FPS: FILM.V.FPS }));

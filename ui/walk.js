@@ -3,7 +3,8 @@
 (function () {
   const L = FILM.lib, O = FILM.obj, U = FILM.UI, PAL = L.PAL, { clamp, lerp, prog, ease, hexA } = L;
   const SIZE = [1080, 1080], W = SIZE[0], H = SIZE[1];
-  const V = FILM.V = { DUR: 14, FPS: 60 };
+  const SLOW = 1.6;                                   // the whole walkthrough runs this much slower than its timeline
+  const V = FILM.V = { DUR: 14 * SLOW, FPS: 60 };
   const canvas = document.getElementById('film'), ctx = canvas.getContext('2d');
   const MID = (U.VH - U.BAR) / 2;
   // which captured state is on screen
@@ -14,14 +15,15 @@
   // camera: window point at the frame centre, and zoom
   const CAM = [[0, 720, MID, 0.7], [0.9, 720, MID, 0.7], [1.6, 800, 330, 1.15], [2.2, 850, 320, 1.3], [2.7, 850, 320, 1.3], [3.2, 720, MID, 0.72], [3.9, 720, MID, 0.72], [4.5, 850, 380, 1.0], [5.6, 850, 380, 1.0], [6.3, 760, 520, 1.05], [6.7, 760, 520, 1.05], [7.3, 884, 620, 1.5], [8.1, 884, 620, 1.5], [8.7, 720, 500, 0.85], [9.0, 720, 500, 0.85], [9.5, 430, 560, 1.15], [10.5, 430, 560, 1.15], [11.2, 250, 400, 1.7], [12.5, 250, 400, 1.7], [13.4, 720, MID, 0.7], [14, 720, MID, 0.7]];
   const CAPS = [[0.2, 2.7, 'قاعدة المعرفة: كتب كود البناء السعودي'], [3.0, 5.8, 'ابحث برقم البند'], [6.0, 8.3, 'حدّد أي نص من البند'], [8.6, 10.7, 'اسأل الكتاب'], [11.0, 13.9, 'إجابة من نص الكود، مع بندها']];
-  function backdrop() {
-    ctx.fillStyle = PAL.brand200; ctx.fillRect(0, 0, W, H); ctx.fillStyle = PAL.brand300; ctx.globalAlpha = 0.5;
-    for (let x = -H; x < W + 300; x += 300) { ctx.beginPath(); ctx.moveTo(x, H); ctx.lineTo(x + H, 0); ctx.lineTo(x + H + 150, 0); ctx.lineTo(x + 150, H); ctx.closePath(); ctx.fill(); }
-    ctx.globalAlpha = 1;
+  // backdrop: the brand's halftone skyline (frontend/web/public/images/landing/hero-halftone.webp), cover-fit, drifting slowly
+  function backdrop(t) {
+    const im = U.bg, k = t / 14, sc = Math.max(W / im.width, H / im.height) * (1.12 + k * 0.05), dw = im.width * sc, dh = im.height * sc;
+    ctx.drawImage(im, (W - dw) / 2 - 30 + k * 60, (H - dh) / 2, dw, dh);
+    ctx.fillStyle = hexA(PAL.brand50, 0.18); ctx.fillRect(0, 0, W, H);
   }
   V.draw = (T) => {
-    T = clamp(Math.round(T * V.FPS) / V.FPS, 0, V.DUR - 1e-4); FILM.bf = 0;
-    ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; backdrop();
+    T = clamp(Math.round(T * V.FPS) / V.FPS, 0, V.DUR - 1e-4) / SLOW; FILM.bf = 0;
+    ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; backdrop(T);
     const [cx, cy, z] = U.track(CAM, T), [mx, my] = U.track(CUR, T), st = U.stateAt(STATES, T);
     ctx.save(); ctx.translate(W / 2, H / 2 - 20); ctx.scale(z, z); ctx.translate(-cx, -cy);
     U.window(ctx, st, { overlay: (c) => {            // the selection growing under the drag, before the real selected state appears
@@ -34,15 +36,15 @@
     ctx.restore();
     // brand: the logo above the window whenever the camera is pulled back
     const far = clamp((0.9 - z) / 0.15);
-    if (far > 0) { ctx.save(); ctx.globalAlpha = far; O.logoLockup(ctx, 540, 96, 48, PAL.inkStrong); ctx.restore(); }
+    if (far > 0) { ctx.save(); ctx.globalAlpha = far; L.rr(ctx, 540 - 150, 96 - 44, 300, 88, 22); ctx.fillStyle = hexA(PAL.brand50, 0.92); ctx.fill(); O.logoLockup(ctx, 540, 96, 44, PAL.inkStrong); ctx.restore(); }
     // captions (sound-off reading)
     for (const [a, b, s] of CAPS) {
       const k = Math.min(L.pop(T, a, 8), 1 - prog(T, b - 0.15, 0.15)); if (k <= 0) continue;
       L.chip(ctx, s, 540, 986, { size: 40, weight: 600, fill: PAL.inkStrong, color: PAL.brand50, outline: null, scale: 0.9 + 0.1 * Math.min(1, k), alpha: clamp(k), h: 92, r: 26, padX: 40 });
     }
-    if (FILM.CFG.draft) L.chip(ctx, 'مسودة · DRAFT', 110, 40, { size: 17, weight: 600, fill: PAL.brand100, color: PAL.inkSoft, outline: PAL.inkSoft, outlineW: 1.5, padX: 13 });
   };
-  V.sound = (S) => {
+  V.sound = (S0) => {
+    const S = new Proxy(S0, { get: (o, k) => (T, ...a) => o[k](T * SLOW, ...a) });      // sounds follow the slowed timeline
     for (const [t] of CLICKS) S.click(t);
     S.whoosh(0.9, 0.7, 0.08); for (let i = 0; i < 7; i++) S.key(1.42 + i * 0.07); S.pop(1.95, 1);
     S.whoosh(2.7, 0.5, 0.08); S.pop(3.6, 0);
