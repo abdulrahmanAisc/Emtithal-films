@@ -8,7 +8,7 @@ what is unconfirmed, what is a placeholder and what was not built.
 |---|---|---|
 | "اسأل الكود", 40 s, 1080x1920 | `src/` (engine, 18 shots, audio) | `exports/emtithal-ask-the-code-phone.mp4` |
 | Teaser, 16 s, 1080x1080 | `teaser/teaser.js` | `exports/emtithal-teaser.mp4` |
-| UI walkthrough, 22 s, 1080x1080 | `ui/walk.js` + `ui/shots/` | `exports/emtithal-ui-walk.mp4` |
+| UI walkthrough, 31 s, 1080x1080 | `ui/walk.js` + `ui/shots/` | `exports/emtithal-ui-walk.mp4` |
 | Design-system reveal, 10 s, 1080x1350 | `ui/system.js` + `ui/shots/` | `exports/emtithal-ui-system.mp4` |
 
 The brief is `docs/emtithal-ask-the-code-film-brief.md` (public copy, internal notes removed); the subtitle timings are

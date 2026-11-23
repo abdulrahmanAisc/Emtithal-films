@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Captures keyframes of the real Emtithal knowledge base and code reader from a running `next dev`.
 //
-//   node capture.cjs [baseUrl=http://localhost:3100]
+//   node capture.cjs [baseUrl=http://localhost:3100] [--from=N] [--shots=<dir>]
 //
 // The dev server needs frontend/web/.env.local with AUTH_SECRET=<anything>, AUTH_TRUST_HOST=true,
 // ALLOW_ALL_PAGES=true (the proxy's dev-only pass-through). There is no backend: every /api/backend/**
@@ -16,9 +16,9 @@ const fs = require("fs");
 const path = require("path");
 const { chromium } = require("playwright");
 
-const BASE = (process.argv[2] || "http://localhost:3100").replace(/\/$/, "");
+const BASE = ((process.argv[2] || "").startsWith("--") ? "http://localhost:3100" : process.argv[2] || "http://localhost:3100").replace(/\/$/, "");
 const DIR = __dirname;
-const SHOTS = path.join(DIR, "shots");
+const SHOTS = (process.argv.find((a) => a.startsWith("--shots=")) || "").slice(8) || path.join(DIR, "shots");
 const fx = (name) => JSON.parse(fs.readFileSync(path.join(DIR, "fixtures", name), "utf8"));
 const F = {
   books: fx("books.json"),
@@ -30,7 +30,12 @@ const F = {
   usedIn: fx("used-in.json"),
   search: fx("search-1011.2.json"),
   ask: fx("ask.json"),
+  paper: fx("page-placeholder.json"),
 };
+// --from=N: go through the whole flow but write only keyframes N and later, keeping the earlier PNGs and their
+// manifest entries as they are. --shots=<dir>: write somewhere else (to compare a full run with the kept frames).
+const arg = (name) => (process.argv.find((a) => a.startsWith(`--${name}=`)) || "").split("=")[1];
+const FROM = Number(arg("from") || 1);
 const BOOK = "SBC201-2024";
 const QUERY = "1011.2";
 const PHRASE = "not less than 1100 mm"; // part of the 1011.2 quote, selected with the mouse
@@ -49,6 +54,20 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     colorScheme: "light",
   });
   const page = await context.newPage();
+
+  // The PLACEHOLDER book page served for pages/<n>: paper white, grey bars for lines of text, nothing readable.
+  const paperPng = await (async () => {
+    const c = await browser.newContext({ viewport: { width: 1240, height: 1754 }, deviceScaleFactor: 1 });
+    const p = await c.newPage();
+    const k = 1240 / F.paper.width;
+    const bars = F.paper.bars
+      .map((b) => `<i style="left:${b.x * k}px;top:${b.y * k}px;width:${b.w * k}px;height:${b.h * k}px"></i>`)
+      .join("");
+    await p.setContent(`<body style="margin:0;background:#fdfdfb"><style>i{position:absolute;background:#d9d9d6;border-radius:3px}</style>${bars}</body>`);
+    const png = await p.screenshot({ type: "png" });
+    await c.close();
+    return png;
+  })();
 
   const problems = [];
   const calls = [];
@@ -98,7 +117,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       if (hold.clause) await hold.clause.wait;
       return F.clauses[n] ? json(F.clauses[n]) : none();
     }
-    return none(); // pages/<n>, figure: no images exist
+    if (/^pages\/\d+$/.test(rest)) return route.fulfill({ status: 200, contentType: "image/png", body: paperPng });
+    return none(); // figure: no images exist
   });
 
   // ---- helpers
@@ -133,8 +153,9 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       if (r) out[name] = r;
       else problems.push(`${id}: target ${name} not found`);
     }
-    await page.screenshot({ path: path.join(SHOTS, `${id}.png`), fullPage: false, animations: "disabled", caret: "initial" });
-    manifest.push({ id, file: `${id}.png`, note, targets: out });
+    const write = manifest.length + 1 >= FROM;
+    if (write) await page.screenshot({ path: path.join(SHOTS, `${id}.png`), fullPage: false, animations: "disabled", caret: "initial" });
+    manifest.push({ id, file: `${id}.png`, note, targets: out, written: write });
     console.log(id, note);
   };
   const clickAt = async (loc) => {
@@ -387,9 +408,50 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     citation: cite,
     answerCard: answer,
     clauseInReader: sec("1011.2"),
+    toPage: panel, // the clause summary panel: the wheel is turned over it to reach the next keyframe
   });
 
-  fs.writeFileSync(path.join(SHOTS, "manifest.json"), JSON.stringify(manifest, null, 2) + "\n");
+  // ============================================================ 14. the original page, lower in the clause panel
+  // No click opens the page: it is the last part of the clause summary panel, reached by scrolling the panel.
+  const pageFigure = panel.locator("figure").filter({ hasText: "الصفحة الأصلية من الكتاب" });
+  const pageHeading = pageFigure.locator("figcaption");
+  const pageImage = pageFigure.locator("img");
+  const pb = await panel.boundingBox();
+  await page.mouse.move(pb.x + pb.width / 2, pb.y + pb.height / 2, { steps: 8 });
+  const panelScroll = () => panel.evaluate((el) => [el.scrollTop, el.scrollHeight - el.clientHeight]);
+  for (let i = 0; i < 20; i++) {
+    const [top, max] = await panelScroll();
+    const h = await pageHeading.boundingBox();
+    const d = Math.min(Math.round(h.y - pb.y - 14), Math.floor(max - top)); // never past the panel's end: the page itself must not move
+    if (d < 2) break;
+    await page.mouse.wheel(0, Math.min(d, 160));
+    await sleep(120);
+  }
+  await pageImage.evaluate((img) => (img.complete && img.naturalWidth ? null : new Promise((r) => img.addEventListener("load", r, { once: true }))));
+  const pageFrame = pageFigure.locator("span[aria-hidden]");
+  await pageFrame.waitFor();
+  await page.mouse.move(720, 20);
+  await shot("The clause summary panel scrolled to 'الصفحة الأصلية من الكتاب': the book page with the frame on the clause (PLACEHOLDER page image and frame position)", {
+    clausePanel: panel,
+    pageHeading,
+    pageImage,
+    pageFrame,
+    pageHint: pageFigure.locator("p"),
+    usedIn: panel.locator("section").filter({ hasText: "مستخدم في المشاريع" }).first(),
+    askPanel: ask,
+    answerCard: answer,
+  });
+
+  // with --from, the earlier entries stay exactly as they are in the file; a target new to them is only added
+  const mf = path.join(SHOTS, "manifest.json");
+  const kept = FROM > 1 && fs.existsSync(mf) ? JSON.parse(fs.readFileSync(mf, "utf8")) : [];
+  const final = manifest.map(({ written, ...m }) => {
+    const old = written ? null : kept.find((k) => k.id === m.id);
+    if (!old) return m;
+    const added = Object.fromEntries(Object.entries(m.targets).filter(([name]) => !(name in old.targets)));
+    return { ...old, targets: { ...old.targets, ...added } };
+  });
+  fs.writeFileSync(mf, JSON.stringify(final, null, 2) + "\n");
   fs.writeFileSync(path.join(DIR, "capture-log.txt"), ["# backend calls the page made", ...calls, "", "# problems", ...problems, ""].join("\n"));
   console.log(`\n${manifest.length} keyframes -> ${SHOTS}`);
   console.log(problems.length ? `problems:\n  ${[...new Set(problems)].join("\n  ")}` : "no problems");

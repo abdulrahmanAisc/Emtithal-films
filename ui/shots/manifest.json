@@ -1,645 +1,706 @@
 [
-  {
-    "id": "k01",
-    "file": "k01.png",
-    "note": "Knowledge base: the book list loaded",
-    "targets": {
-      "sidebar": {
-        "x": 1141,
-        "y": 0,
-        "w": 299,
-        "h": 900
-      },
-      "header": {
-        "x": 0,
-        "y": 0,
-        "w": 1140,
-        "h": 72
-      },
-      "pageTitle": {
-        "x": 24,
-        "y": 96,
-        "w": 1092,
-        "h": 32
-      },
-      "searchInput": {
-        "x": 203.8,
-        "y": 173,
-        "w": 875.3,
-        "h": 40
-      },
-      "bookGrid": {
-        "x": 24,
-        "y": 270,
-        "w": 1092,
-        "h": 1572
-      },
-      "bookCard": {
-        "x": 576,
-        "y": 534,
-        "w": 540,
-        "h": 120
-      }
-    }
-  },
-  {
-    "id": "k02",
-    "file": "k02.png",
-    "note": "List search focused with 'SBC 201' typed: only the SBC 201 card is left",
-    "targets": {
-      "searchInput": {
-        "x": 203.8,
-        "y": 173,
-        "w": 875.3,
-        "h": 40
-      },
-      "bookCard": {
-        "x": 576,
-        "y": 270,
-        "w": 540,
-        "h": 120
-      },
-      "bookTitle": {
-        "x": 790.3,
-        "y": 287,
-        "w": 256.7,
-        "h": 24
-      },
-      "enabledSwitch": {
-        "x": 923.5,
-        "y": 348,
-        "w": 36,
-        "h": 20
-      },
-      "previewButton": {
-        "x": 700.6,
-        "y": 343,
-        "w": 113.3,
-        "h": 30
-      },
-      "openButton": {
-        "x": 593,
-        "y": 344,
-        "w": 99.6,
-        "h": 28
-      }
-    }
-  },
-  {
-    "id": "k03",
-    "file": "k03.png",
-    "note": "Quick preview of SBC 201: book details, the reader on chapter 10 and the ask panel",
-    "targets": {
-      "previewDialog": {
-        "x": 32,
-        "y": 32,
-        "w": 1376,
-        "h": 836
-      },
-      "detailsRail": {
-        "x": 1128,
-        "y": 93,
-        "w": 280,
-        "h": 775
-      },
-      "readerText": {
-        "x": 388,
-        "y": 160,
-        "w": 724,
-        "h": 553.8
-      },
-      "askPanel": {
-        "x": 32,
-        "y": 93,
-        "w": 340,
-        "h": 775
-      },
-      "openButton": {
-        "x": 136,
-        "y": 47,
-        "w": 97.8,
-        "h": 30
-      },
-      "closeButton": {
-        "x": 52,
-        "y": 47,
-        "w": 30,
-        "h": 30
-      }
-    }
-  },
-  {
-    "id": "k04",
-    "file": "k04.png",
-    "note": "SBC 201 opened: the app shows the reader first (tab 'عرض الكتاب'), contents and chapter 10",
-    "targets": {
-      "sidebar": {
-        "x": 1141,
-        "y": 0,
-        "w": 299,
-        "h": 900
-      },
-      "header": {
-        "x": 0,
-        "y": 0,
-        "w": 1140,
-        "h": 72
-      },
-      "bookHeader": {
-        "x": 216,
-        "y": 120,
-        "w": 849,
-        "h": 28
-      },
-      "tabs": {
-        "x": 24,
-        "y": 176,
-        "w": 1092,
-        "h": 29
-      },
-      "langSwitch": {
-        "x": 24,
-        "y": 127,
-        "w": 180,
-        "h": 30
-      },
-      "contents": {
-        "x": 852,
-        "y": 257,
-        "w": 288,
-        "h": 651
-      },
-      "searchInput": {
-        "x": 375.8,
-        "y": 215,
-        "w": 687.2,
-        "h": 32
-      },
-      "searchBox": {
-        "x": 310.8,
-        "y": 214,
-        "w": 781.2,
-        "h": 34
-      },
-      "readerText": {
-        "x": 42,
-        "y": 273,
-        "w": 768,
-        "h": 521.8
-      },
-      "contentsToggle": {
-        "x": 1100,
-        "y": 217,
-        "w": 28,
-        "h": 28
-      },
-      "sidebarToggle": {
-        "x": 1161,
-        "y": 24,
-        "w": 32,
-        "h": 32
-      },
-      "askButton": {
-        "x": 24,
-        "y": 836,
-        "w": 135.4,
-        "h": 40
-      }
-    }
-  },
-  {
-    "id": "k05",
-    "file": "k05.png",
-    "note": "Reading room: contents hidden and the app sidebar collapsed with their own buttons",
-    "targets": {
-      "contentsToggle": {
-        "x": 1352,
-        "y": 217,
-        "w": 28,
-        "h": 28
-      },
-      "sidebarToggle": {
-        "x": 1400.5,
-        "y": 50,
-        "w": 32,
-        "h": 32
-      },
-      "searchInput": {
-        "x": 375.8,
-        "y": 215,
-        "w": 939.2,
-        "h": 32
-      },
-      "searchBox": {
-        "x": 310.8,
-        "y": 214,
-        "w": 1033.2,
-        "h": 34
-      },
-      "readerText": {
-        "x": 312,
-        "y": 273,
-        "w": 768,
-        "h": 521.8
-      },
-      "clauseInReader": {
-        "x": 337,
-        "y": 497.8,
-        "w": 718,
-        "h": 40
-      },
-      "askButton": {
-        "x": 24,
-        "y": 836,
-        "w": 135.4,
-        "h": 40
-      }
-    }
-  },
-  {
-    "id": "k06",
-    "file": "k06.png",
-    "note": "Reader search focused with '1011.2' typed (results come on Enter)",
-    "targets": {
-      "searchInput": {
-        "x": 375.8,
-        "y": 215,
-        "w": 939.2,
-        "h": 32
-      },
-      "searchBox": {
-        "x": 310.8,
-        "y": 214,
-        "w": 1033.2,
-        "h": 34
-      },
-      "readerText": {
-        "x": 312,
-        "y": 273,
-        "w": 768,
-        "h": 521.8
-      }
-    }
-  },
-  {
-    "id": "k07",
-    "file": "k07.png",
-    "note": "Search results row under the search field: one hit, 1011.2, found by clause number; counter 1/1",
-    "targets": {
-      "searchInput": {
-        "x": 398,
-        "y": 215,
-        "w": 917,
-        "h": 32
-      },
-      "searchBox": {
-        "x": 310.8,
-        "y": 214,
-        "w": 1033.2,
-        "h": 34
-      },
-      "resultsRow": {
-        "x": 0,
-        "y": 257,
-        "w": 1392,
-        "h": 35
-      },
-      "firstHit": {
-        "x": 1267.5,
-        "y": 263,
-        "w": 112.5,
-        "h": 22
-      },
-      "hitCounter": {
-        "x": 375.8,
-        "y": 223,
-        "w": 18.2,
-        "h": 16
-      }
-    }
-  },
-  {
-    "id": "k08",
-    "file": "k08.png",
-    "note": "Clause 1011.2 open: highlighted in the reader with its exception below it, and the clause summary panel with the exception",
-    "targets": {
-      "firstHit": {
-        "x": 1267.5,
-        "y": 255,
-        "w": 112.5,
-        "h": 22
-      },
-      "clauseInReader": {
-        "x": 527,
-        "y": 524.8,
-        "w": 718,
-        "h": 40
-      },
-      "clauseText": {
-        "x": 590.7,
-        "y": 530.8,
-        "w": 377.1,
-        "h": 28
-      },
-      "exceptionInReader": {
-        "x": 527,
-        "y": 564.8,
-        "w": 702,
-        "h": 72
-      },
-      "clausePanel": {
-        "x": 0,
-        "y": 198,
-        "w": 380,
-        "h": 702
-      },
-      "panelClauseText": {
-        "x": 16,
-        "y": 288,
-        "w": 347,
-        "h": 64
-      },
-      "panelExceptions": {
-        "x": 16,
-        "y": 418,
-        "w": 347,
-        "h": 148
-      },
-      "copyButton": {
-        "x": 301,
-        "y": 372,
-        "w": 62,
-        "h": 26
-      },
-      "askButton": {
-        "x": 24,
-        "y": 836,
-        "w": 135.4,
-        "h": 40
-      }
-    }
-  },
-  {
-    "id": "k09",
-    "file": "k09.png",
-    "note": "The phrase \"not less than 1100 mm\" selected with the mouse in clause 1011.2: the ask menu opens under it",
-    "targets": {
-      "selection": {
-        "x": 800.125,
-        "y": 530.765625,
-        "w": 167.6875,
-        "h": 28
-      },
-      "dragFrom": {
-        "x": 800.625,
-        "y": 544.765625,
-        "w": 0,
-        "h": 0
-      },
-      "dragTo": {
-        "x": 967.3125,
-        "y": 544.765625,
-        "w": 0,
-        "h": 0
-      },
-      "clauseInReader": {
-        "x": 527,
-        "y": 524.8,
-        "w": 718,
-        "h": 40
-      },
-      "selectionMenu": {
-        "x": 740,
-        "y": 566.8,
-        "w": 288,
-        "h": 238
-      },
-      "menuAsk": {
-        "x": 749,
-        "y": 635.8,
-        "w": 270,
-        "h": 32
-      },
-      "menuExplain": {
-        "x": 749,
-        "y": 667.8,
-        "w": 270,
-        "h": 32
-      },
-      "menuRelated": {
-        "x": 749,
-        "y": 699.8,
-        "w": 270,
-        "h": 32
-      },
-      "menuChecked": {
-        "x": 749,
-        "y": 731.8,
-        "w": 270,
-        "h": 32
-      },
-      "menuProject": {
-        "x": 749,
-        "y": 763.8,
-        "w": 270,
-        "h": 32
-      },
-      "menuClose": {
-        "x": 757,
-        "y": 586.8,
-        "w": 18,
-        "h": 18
-      },
-      "readerMargin": {
-        "x": 1384,
-        "y": 892,
-        "w": 0,
-        "h": 0
-      },
-      "askButton": {
-        "x": 24,
-        "y": 836,
-        "w": 135.4,
-        "h": 40
-      }
-    }
-  },
-  {
-    "id": "k10",
-    "file": "k10.png",
-    "note": "The 'اسأل الكتاب' panel open beside the clause summary, with its three suggested questions",
-    "targets": {
-      "askPanel": {
-        "x": 0,
-        "y": 206,
-        "w": 340,
-        "h": 702
-      },
-      "askTitle": {
-        "x": 0,
-        "y": 206,
-        "w": 339,
-        "h": 61
-      },
-      "chip1": {
-        "x": 16,
-        "y": 283,
-        "w": 307,
-        "h": 38
-      },
-      "chip2": {
-        "x": 16,
-        "y": 329,
-        "w": 307,
-        "h": 38
-      },
-      "questionChip": {
-        "x": 16,
-        "y": 375,
-        "w": 307,
-        "h": 38
-      },
-      "askInput": {
-        "x": 61,
-        "y": 818,
-        "w": 257,
-        "h": 32
-      },
-      "sendButton": {
-        "x": 21,
-        "y": 818,
-        "w": 32,
-        "h": 32
-      },
-      "clausePanel": {
-        "x": 340,
-        "y": 206,
-        "w": 380,
-        "h": 702
-      },
-      "clauseInReader": {
-        "x": 761,
-        "y": 532.8,
-        "w": 590,
-        "h": 40
-      }
-    }
-  },
-  {
-    "id": "k11",
-    "file": "k11.png",
-    "note": "Question sent (the third suggestion): the question bubble and 'جارٍ البحث في الكتاب…'",
-    "targets": {
-      "askPanel": {
-        "x": 0,
-        "y": 206,
-        "w": 340,
-        "h": 702
-      },
-      "questionBubble": {
-        "x": 16,
-        "y": 283,
-        "w": 260.9,
-        "h": 36
-      },
-      "searching": {
-        "x": 16,
-        "y": 331,
-        "w": 307,
-        "h": 20
-      },
-      "askInput": {
-        "x": 61,
-        "y": 818,
-        "w": 257,
-        "h": 32
-      }
-    }
-  },
-  {
-    "id": "k12",
-    "file": "k12.png",
-    "note": "The answer with its source: clause 1011.2 and the quoted words",
-    "targets": {
-      "askPanel": {
-        "x": 0,
-        "y": 206,
-        "w": 340,
-        "h": 702
-      },
-      "questionBubble": {
-        "x": 16,
-        "y": 283,
-        "w": 260.9,
-        "h": 36
-      },
-      "answerCard": {
-        "x": 16,
-        "y": 331,
-        "w": 307,
-        "h": 144
-      },
-      "answerText": {
-        "x": 28,
-        "y": 343,
-        "w": 283,
-        "h": 56
-      },
-      "sources": {
-        "x": 28,
-        "y": 427,
-        "w": 283,
-        "h": 36
-      },
-      "citation": {
-        "x": 261.3,
-        "y": 427,
-        "w": 49.7,
-        "h": 20
-      },
-      "citationQuote": {
-        "x": 39.1,
-        "y": 426,
-        "w": 271.9,
-        "h": 40
-      },
-      "clauseInReader": {
-        "x": 761,
-        "y": 532.8,
-        "w": 590,
-        "h": 40
-      },
-      "clausePanel": {
-        "x": 340,
-        "y": 206,
-        "w": 380,
-        "h": 702
-      }
-    }
-  },
-  {
-    "id": "k13",
-    "file": "k13.png",
-    "note": "Pointer on the 1011.2 citation chip (it underlines; clicking it shows the clause in the book)",
-    "targets": {
-      "citation": {
-        "x": 261.3,
-        "y": 427,
-        "w": 49.7,
-        "h": 20
-      },
-      "answerCard": {
-        "x": 16,
-        "y": 331,
-        "w": 307,
-        "h": 144
-      },
-      "clauseInReader": {
-        "x": 761,
-        "y": 532.8,
-        "w": 590,
-        "h": 40
-      }
-    }
+ {
+  "id": "k01",
+  "file": "k01.png",
+  "note": "Knowledge base: the book list loaded",
+  "targets": {
+   "sidebar": {
+    "x": 1141,
+    "y": 0,
+    "w": 299,
+    "h": 900
+   },
+   "header": {
+    "x": 0,
+    "y": 0,
+    "w": 1140,
+    "h": 72
+   },
+   "pageTitle": {
+    "x": 24,
+    "y": 96,
+    "w": 1092,
+    "h": 32
+   },
+   "searchInput": {
+    "x": 203.8,
+    "y": 173,
+    "w": 875.3,
+    "h": 40
+   },
+   "bookGrid": {
+    "x": 24,
+    "y": 270,
+    "w": 1092,
+    "h": 1572
+   },
+   "bookCard": {
+    "x": 576,
+    "y": 534,
+    "w": 540,
+    "h": 120
+   }
   }
+ },
+ {
+  "id": "k02",
+  "file": "k02.png",
+  "note": "List search focused with 'SBC 201' typed: only the SBC 201 card is left",
+  "targets": {
+   "searchInput": {
+    "x": 203.8,
+    "y": 173,
+    "w": 875.3,
+    "h": 40
+   },
+   "bookCard": {
+    "x": 576,
+    "y": 270,
+    "w": 540,
+    "h": 120
+   },
+   "bookTitle": {
+    "x": 790.3,
+    "y": 287,
+    "w": 256.7,
+    "h": 24
+   },
+   "enabledSwitch": {
+    "x": 923.5,
+    "y": 348,
+    "w": 36,
+    "h": 20
+   },
+   "previewButton": {
+    "x": 700.6,
+    "y": 343,
+    "w": 113.3,
+    "h": 30
+   },
+   "openButton": {
+    "x": 593,
+    "y": 344,
+    "w": 99.6,
+    "h": 28
+   }
+  }
+ },
+ {
+  "id": "k03",
+  "file": "k03.png",
+  "note": "Quick preview of SBC 201: book details, the reader on chapter 10 and the ask panel",
+  "targets": {
+   "previewDialog": {
+    "x": 32,
+    "y": 32,
+    "w": 1376,
+    "h": 836
+   },
+   "detailsRail": {
+    "x": 1128,
+    "y": 93,
+    "w": 280,
+    "h": 775
+   },
+   "readerText": {
+    "x": 388,
+    "y": 160,
+    "w": 724,
+    "h": 553.8
+   },
+   "askPanel": {
+    "x": 32,
+    "y": 93,
+    "w": 340,
+    "h": 775
+   },
+   "openButton": {
+    "x": 136,
+    "y": 47,
+    "w": 97.8,
+    "h": 30
+   },
+   "closeButton": {
+    "x": 52,
+    "y": 47,
+    "w": 30,
+    "h": 30
+   }
+  }
+ },
+ {
+  "id": "k04",
+  "file": "k04.png",
+  "note": "SBC 201 opened: the app shows the reader first (tab 'عرض الكتاب'), contents and chapter 10",
+  "targets": {
+   "sidebar": {
+    "x": 1141,
+    "y": 0,
+    "w": 299,
+    "h": 900
+   },
+   "header": {
+    "x": 0,
+    "y": 0,
+    "w": 1140,
+    "h": 72
+   },
+   "bookHeader": {
+    "x": 216,
+    "y": 120,
+    "w": 849,
+    "h": 28
+   },
+   "tabs": {
+    "x": 24,
+    "y": 176,
+    "w": 1092,
+    "h": 29
+   },
+   "langSwitch": {
+    "x": 24,
+    "y": 127,
+    "w": 180,
+    "h": 30
+   },
+   "contents": {
+    "x": 852,
+    "y": 257,
+    "w": 288,
+    "h": 651
+   },
+   "searchInput": {
+    "x": 375.8,
+    "y": 215,
+    "w": 687.2,
+    "h": 32
+   },
+   "searchBox": {
+    "x": 310.8,
+    "y": 214,
+    "w": 781.2,
+    "h": 34
+   },
+   "readerText": {
+    "x": 42,
+    "y": 273,
+    "w": 768,
+    "h": 521.8
+   },
+   "contentsToggle": {
+    "x": 1100,
+    "y": 217,
+    "w": 28,
+    "h": 28
+   },
+   "sidebarToggle": {
+    "x": 1161,
+    "y": 24,
+    "w": 32,
+    "h": 32
+   },
+   "askButton": {
+    "x": 24,
+    "y": 836,
+    "w": 135.4,
+    "h": 40
+   }
+  }
+ },
+ {
+  "id": "k05",
+  "file": "k05.png",
+  "note": "Reading room: contents hidden and the app sidebar collapsed with their own buttons",
+  "targets": {
+   "contentsToggle": {
+    "x": 1352,
+    "y": 217,
+    "w": 28,
+    "h": 28
+   },
+   "sidebarToggle": {
+    "x": 1400.5,
+    "y": 50,
+    "w": 32,
+    "h": 32
+   },
+   "searchInput": {
+    "x": 375.8,
+    "y": 215,
+    "w": 939.2,
+    "h": 32
+   },
+   "searchBox": {
+    "x": 310.8,
+    "y": 214,
+    "w": 1033.2,
+    "h": 34
+   },
+   "readerText": {
+    "x": 312,
+    "y": 273,
+    "w": 768,
+    "h": 521.8
+   },
+   "clauseInReader": {
+    "x": 337,
+    "y": 497.8,
+    "w": 718,
+    "h": 40
+   },
+   "askButton": {
+    "x": 24,
+    "y": 836,
+    "w": 135.4,
+    "h": 40
+   }
+  }
+ },
+ {
+  "id": "k06",
+  "file": "k06.png",
+  "note": "Reader search focused with '1011.2' typed (results come on Enter)",
+  "targets": {
+   "searchInput": {
+    "x": 375.8,
+    "y": 215,
+    "w": 939.2,
+    "h": 32
+   },
+   "searchBox": {
+    "x": 310.8,
+    "y": 214,
+    "w": 1033.2,
+    "h": 34
+   },
+   "readerText": {
+    "x": 312,
+    "y": 273,
+    "w": 768,
+    "h": 521.8
+   }
+  }
+ },
+ {
+  "id": "k07",
+  "file": "k07.png",
+  "note": "Search results row under the search field: one hit, 1011.2, found by clause number; counter 1/1",
+  "targets": {
+   "searchInput": {
+    "x": 398,
+    "y": 215,
+    "w": 917,
+    "h": 32
+   },
+   "searchBox": {
+    "x": 310.8,
+    "y": 214,
+    "w": 1033.2,
+    "h": 34
+   },
+   "resultsRow": {
+    "x": 0,
+    "y": 257,
+    "w": 1392,
+    "h": 35
+   },
+   "firstHit": {
+    "x": 1267.5,
+    "y": 263,
+    "w": 112.5,
+    "h": 22
+   },
+   "hitCounter": {
+    "x": 375.8,
+    "y": 223,
+    "w": 18.2,
+    "h": 16
+   }
+  }
+ },
+ {
+  "id": "k08",
+  "file": "k08.png",
+  "note": "Clause 1011.2 open: highlighted in the reader with its exception below it, and the clause summary panel with the exception",
+  "targets": {
+   "firstHit": {
+    "x": 1267.5,
+    "y": 255,
+    "w": 112.5,
+    "h": 22
+   },
+   "clauseInReader": {
+    "x": 527,
+    "y": 524.8,
+    "w": 718,
+    "h": 40
+   },
+   "clauseText": {
+    "x": 590.7,
+    "y": 530.8,
+    "w": 377.1,
+    "h": 28
+   },
+   "exceptionInReader": {
+    "x": 527,
+    "y": 564.8,
+    "w": 702,
+    "h": 72
+   },
+   "clausePanel": {
+    "x": 0,
+    "y": 198,
+    "w": 380,
+    "h": 702
+   },
+   "panelClauseText": {
+    "x": 16,
+    "y": 288,
+    "w": 347,
+    "h": 64
+   },
+   "panelExceptions": {
+    "x": 16,
+    "y": 418,
+    "w": 347,
+    "h": 148
+   },
+   "copyButton": {
+    "x": 301,
+    "y": 372,
+    "w": 62,
+    "h": 26
+   },
+   "askButton": {
+    "x": 24,
+    "y": 836,
+    "w": 135.4,
+    "h": 40
+   }
+  }
+ },
+ {
+  "id": "k09",
+  "file": "k09.png",
+  "note": "The phrase \"not less than 1100 mm\" selected with the mouse in clause 1011.2: the ask menu opens under it",
+  "targets": {
+   "selection": {
+    "x": 800.125,
+    "y": 530.765625,
+    "w": 167.6875,
+    "h": 28
+   },
+   "dragFrom": {
+    "x": 800.625,
+    "y": 544.765625,
+    "w": 0,
+    "h": 0
+   },
+   "dragTo": {
+    "x": 967.3125,
+    "y": 544.765625,
+    "w": 0,
+    "h": 0
+   },
+   "clauseInReader": {
+    "x": 527,
+    "y": 524.8,
+    "w": 718,
+    "h": 40
+   },
+   "selectionMenu": {
+    "x": 740,
+    "y": 566.8,
+    "w": 288,
+    "h": 238
+   },
+   "menuAsk": {
+    "x": 749,
+    "y": 635.8,
+    "w": 270,
+    "h": 32
+   },
+   "menuExplain": {
+    "x": 749,
+    "y": 667.8,
+    "w": 270,
+    "h": 32
+   },
+   "menuRelated": {
+    "x": 749,
+    "y": 699.8,
+    "w": 270,
+    "h": 32
+   },
+   "menuChecked": {
+    "x": 749,
+    "y": 731.8,
+    "w": 270,
+    "h": 32
+   },
+   "menuProject": {
+    "x": 749,
+    "y": 763.8,
+    "w": 270,
+    "h": 32
+   },
+   "menuClose": {
+    "x": 757,
+    "y": 586.8,
+    "w": 18,
+    "h": 18
+   },
+   "readerMargin": {
+    "x": 1384,
+    "y": 892,
+    "w": 0,
+    "h": 0
+   },
+   "askButton": {
+    "x": 24,
+    "y": 836,
+    "w": 135.4,
+    "h": 40
+   }
+  }
+ },
+ {
+  "id": "k10",
+  "file": "k10.png",
+  "note": "The 'اسأل الكتاب' panel open beside the clause summary, with its three suggested questions",
+  "targets": {
+   "askPanel": {
+    "x": 0,
+    "y": 206,
+    "w": 340,
+    "h": 702
+   },
+   "askTitle": {
+    "x": 0,
+    "y": 206,
+    "w": 339,
+    "h": 61
+   },
+   "chip1": {
+    "x": 16,
+    "y": 283,
+    "w": 307,
+    "h": 38
+   },
+   "chip2": {
+    "x": 16,
+    "y": 329,
+    "w": 307,
+    "h": 38
+   },
+   "questionChip": {
+    "x": 16,
+    "y": 375,
+    "w": 307,
+    "h": 38
+   },
+   "askInput": {
+    "x": 61,
+    "y": 818,
+    "w": 257,
+    "h": 32
+   },
+   "sendButton": {
+    "x": 21,
+    "y": 818,
+    "w": 32,
+    "h": 32
+   },
+   "clausePanel": {
+    "x": 340,
+    "y": 206,
+    "w": 380,
+    "h": 702
+   },
+   "clauseInReader": {
+    "x": 761,
+    "y": 532.8,
+    "w": 590,
+    "h": 40
+   }
+  }
+ },
+ {
+  "id": "k11",
+  "file": "k11.png",
+  "note": "Question sent (the third suggestion): the question bubble and 'جارٍ البحث في الكتاب…'",
+  "targets": {
+   "askPanel": {
+    "x": 0,
+    "y": 206,
+    "w": 340,
+    "h": 702
+   },
+   "questionBubble": {
+    "x": 16,
+    "y": 283,
+    "w": 260.9,
+    "h": 36
+   },
+   "searching": {
+    "x": 16,
+    "y": 331,
+    "w": 307,
+    "h": 20
+   },
+   "askInput": {
+    "x": 61,
+    "y": 818,
+    "w": 257,
+    "h": 32
+   }
+  }
+ },
+ {
+  "id": "k12",
+  "file": "k12.png",
+  "note": "The answer with its source: clause 1011.2 and the quoted words",
+  "targets": {
+   "askPanel": {
+    "x": 0,
+    "y": 206,
+    "w": 340,
+    "h": 702
+   },
+   "questionBubble": {
+    "x": 16,
+    "y": 283,
+    "w": 260.9,
+    "h": 36
+   },
+   "answerCard": {
+    "x": 16,
+    "y": 331,
+    "w": 307,
+    "h": 144
+   },
+   "answerText": {
+    "x": 28,
+    "y": 343,
+    "w": 283,
+    "h": 56
+   },
+   "sources": {
+    "x": 28,
+    "y": 427,
+    "w": 283,
+    "h": 36
+   },
+   "citation": {
+    "x": 261.3,
+    "y": 427,
+    "w": 49.7,
+    "h": 20
+   },
+   "citationQuote": {
+    "x": 39.1,
+    "y": 426,
+    "w": 271.9,
+    "h": 40
+   },
+   "clauseInReader": {
+    "x": 761,
+    "y": 532.8,
+    "w": 590,
+    "h": 40
+   },
+   "clausePanel": {
+    "x": 340,
+    "y": 206,
+    "w": 380,
+    "h": 702
+   }
+  }
+ },
+ {
+  "id": "k13",
+  "file": "k13.png",
+  "note": "Pointer on the 1011.2 citation chip (it underlines; clicking it shows the clause in the book)",
+  "targets": {
+   "citation": {
+    "x": 261.3,
+    "y": 427,
+    "w": 49.7,
+    "h": 20
+   },
+   "answerCard": {
+    "x": 16,
+    "y": 331,
+    "w": 307,
+    "h": 144
+   },
+   "clauseInReader": {
+    "x": 761,
+    "y": 532.8,
+    "w": 590,
+    "h": 40
+   },
+   "toPage": {
+    "x": 340,
+    "y": 206,
+    "w": 380,
+    "h": 702
+   }
+  }
+ },
+ {
+  "id": "k14",
+  "file": "k14.png",
+  "note": "The clause summary panel scrolled to 'الصفحة الأصلية من الكتاب': the book page with the frame on the clause (PLACEHOLDER page image and frame position)",
+  "targets": {
+   "clausePanel": {
+    "x": 340,
+    "y": 206,
+    "w": 380,
+    "h": 702
+   },
+   "pageHeading": {
+    "x": 356,
+    "y": 286,
+    "w": 347,
+    "h": 20
+   },
+   "pageImage": {
+    "x": 357,
+    "y": 315,
+    "w": 345,
+    "h": 488
+   },
+   "pageFrame": {
+    "x": 389.5,
+    "y": 473.2,
+    "w": 280,
+    "h": 29.5
+   },
+   "pageHint": {
+    "x": 356,
+    "y": 808,
+    "w": 347,
+    "h": 16
+   },
+   "usedIn": {
+    "x": 356,
+    "y": 844,
+    "w": 347,
+    "h": 48
+   },
+   "askPanel": {
+    "x": 0,
+    "y": 206,
+    "w": 340,
+    "h": 702
+   },
+   "answerCard": {
+    "x": 16,
+    "y": 331,
+    "w": 307,
+    "h": 144
+   }
+  }
+ }
 ]

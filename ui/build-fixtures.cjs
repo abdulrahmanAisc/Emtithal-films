@@ -59,6 +59,26 @@ const full = (r, exceptions = []) => ({
 });
 const clauses = {};
 for (const r of rows) clauses[r.number] = full(r, rows.filter((x) => x.kind === "exception" && x.parent_number === r.number));
+
+// --- PLACEHOLDER book page (no page image exists outside the product's store): capture.cjs draws a greeked
+// page from this, grey bars for lines of text and nothing readable, and serves it for pages/<n>. Sizes are in
+// PDF points with the origin at the top left, as the UI reads bbox (clause-parts.tsx: left = bbox[0]/width,
+// top = bbox[1]/height). The page size (A4) and the bbox are placeholders, not the clause's real position.
+const PW = 595, PH = 842, X0 = 62, X1 = 533, LINE = 7, GAP = 15;
+const bars = [];
+const para = (y, widths) => widths.forEach((w, i) => bars.push({ x: X0, y: y + i * GAP, w: Math.round((X1 - X0) * w), h: LINE }));
+para(96, [1, 1, 0.97, 1, 0.62]);
+para(196, [1, 0.98, 1, 0.44]);
+const FRAME_Y = 280, FRAME_LINES = [1, 1, 0.71];
+para(FRAME_Y, FRAME_LINES); // the block the frame goes around
+para(350, [1, 1, 0.99, 1, 1, 0.35]);
+para(466, [1, 0.96, 1, 1, 0.8]);
+para(566, [1, 1, 1, 0.52]);
+para(652, [1, 0.99, 1, 1, 1, 0.27]);
+const frame = [X0 - 6, FRAME_Y - 7, X1 + 6, FRAME_Y + (FRAME_LINES.length - 1) * GAP + LINE + 7];
+out("page-placeholder.json", { placeholder: true, width: PW, height: PH, bars, frame });
+clauses["1011.2"].bbox = frame; // PLACEHOLDER position
+clauses["1011.2"].page_size = { width: PW, height: PH }; // PLACEHOLDER size
 out("clauses.json", clauses);
 out("overview.json", {
   book: sbc201,

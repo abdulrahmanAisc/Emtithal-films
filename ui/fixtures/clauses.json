@@ -91,8 +91,16 @@
     "text_ar": null,
     "page_start": 0,
     "page_end": 0,
-    "bbox": null,
-    "page_size": null,
+    "bbox": [
+      56,
+      273,
+      539,
+      324
+    ],
+    "page_size": {
+      "width": 595,
+      "height": 842
+    },
     "sort_kind": null,
     "answerable": null,
     "exceptions": [
